@@ -11,16 +11,31 @@
     y luego reza al señor para que no te de un error raro, revisa los textos en rojo y le das
     sí a lo que salga con tal de que funcione (vela en mano(tuve fé))
     -->
+
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="358dp"
-        android:layout_height="352dp"
+        android:layout_width="352dp"
+        android:layout_height="408dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
         tools:context=".mapa"
         tools:ignore="MissingClass"></fragment>
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="69dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064"
+        app:srcCompat="@drawable/espina_de_pescado1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
