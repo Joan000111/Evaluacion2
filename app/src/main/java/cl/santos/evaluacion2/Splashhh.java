@@ -26,6 +26,6 @@ public class Splashhh extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },4000);
     }
 }

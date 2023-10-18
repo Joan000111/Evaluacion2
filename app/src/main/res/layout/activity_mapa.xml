@@ -27,9 +27,10 @@
         tools:ignore="MissingClass"></fragment>
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/bvolver"
         android:layout_width="69dp"
         android:layout_height="66dp"
+        android:backgroundTint="#ABEBD2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.084"
