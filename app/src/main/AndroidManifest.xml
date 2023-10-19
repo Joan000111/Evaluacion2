@@ -7,7 +7,8 @@
     "uses-permission" porque al inicio dará error si le pones la s al final pero para
     implementar correctamente, luego sí debes ponerle la s de nuevo (ni yo tan webeao)
     -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation"></uses-permission>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
