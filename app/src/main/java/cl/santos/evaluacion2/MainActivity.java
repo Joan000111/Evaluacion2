@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
                 );
 
                 //se pasan los valores a int para no dejarlos como string
-                int primeralong = Integer.parseInt(longuna.getText().toString());
-                int primeralati = Integer.parseInt(latuna.getText().toString());
-                int segundalong = Integer.parseInt(longdos.getText().toString());
-                int segundalati = Integer.parseInt(latdos.getText().toString());
-                int terceralong = Integer.parseInt(longtres.getText().toString());
-                int terceralati = Integer.parseInt(lattres.getText().toString());
+                double primeralong = Double.parseDouble(longuna.getText().toString());
+                double primeralati = Double.parseDouble(latuna.getText().toString());
+                double segundalong = Double.parseDouble(longdos.getText().toString());
+                double segundalati = Double.parseDouble(latdos.getText().toString());
+                double terceralong = Double.parseDouble(longtres.getText().toString());
+                double terceralati = Double.parseDouble(lattres.getText().toString());
 
                 //se mandan al activity del mapa
                 intent.putExtra("lo1", primeralong);

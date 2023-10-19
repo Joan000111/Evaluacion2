@@ -7,8 +7,8 @@
     "uses-permission" porque al inicio dará error si le pones la s al final pero para
     implementar correctamente, luego sí debes ponerle la s de nuevo (ni yo tan webeao)
     -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
-        tools:ignore="CoarseFineLocation"></uses-permission>
+    <use-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation"></use-permission>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
@@ -22,6 +22,7 @@
         android:theme="@style/Theme.Evaluacion2"
         tools:targetApi="31">
 
+        <!--tambien hay que añadir el  meta data tambien-->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBHIkMtmLBKkrUR1SdXNTJk-EakJDCXqJk"/>

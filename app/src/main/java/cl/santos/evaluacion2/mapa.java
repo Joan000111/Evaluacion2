@@ -53,14 +53,14 @@ public class mapa extends AppCompatActivity implements OnMapReadyCallback {
         GoogleMap mMap = googleMap;
 
         //se llaman los valores enviados con el intent
-        int lon1 = getIntent().getIntExtra("lo1",0);
-        int lat1 = getIntent().getIntExtra("la1",0);
+        double lon1 = getIntent().getDoubleExtra("lo1",0.0);
+        double lat1 = getIntent().getDoubleExtra("la1",0.0);
 
-        int lon2 = getIntent().getIntExtra("lo2",0);
-        int lat2 = getIntent().getIntExtra("la2",0);
+        double lon2 = getIntent().getDoubleExtra("lo2",0.0);
+        double lat2 = getIntent().getDoubleExtra("la2",0.0);
 
-        int lon3 = getIntent().getIntExtra("lo3",0);
-        int lat3 = getIntent().getIntExtra("la3",0);
+        double lon3 = getIntent().getDoubleExtra("lo3",0.0);
+        double lat3 = getIntent().getDoubleExtra("la3",0.0);
 
         //se asignan los valores a los amrcadores, tal que
         LatLng punto1 = new LatLng(lon1,lat1);
@@ -77,5 +77,6 @@ public class mapa extends AppCompatActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(punto3)
                 .title("Tercer Marcador"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(punto3));
+
     }
 }
