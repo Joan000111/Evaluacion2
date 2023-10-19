@@ -21,79 +21,34 @@
             android:background="#1B98E0">
 
             <EditText
-                android:id="@+id/elat1"
-                android:layout_width="137dp"
-                android:layout_height="47dp"
-                android:ems="10"
-                android:hint="Latitud"
-                android:inputType="text"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.775"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.291" />
-
-            <EditText
                 android:id="@+id/elong2"
-                android:layout_width="137dp"
-                android:layout_height="47dp"
+                android:layout_width="270dp"
+                android:layout_height="51dp"
                 android:ems="10"
-                android:hint="Longitud"
+                android:hint="LongitudyLatitud"
                 android:inputType="text"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.231"
+                app:layout_constraintHorizontal_bias="0.395"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.458" />
-
-            <EditText
-                android:id="@+id/elat2"
-                android:layout_width="137dp"
-                android:layout_height="47dp"
-                android:ems="10"
-                android:hint="Latitud"
-                android:inputType="text"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.775"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.458" />
+                app:layout_constraintVertical_bias="0.467" />
 
             <EditText
                 android:id="@+id/elong3"
-                android:layout_width="137dp"
-                android:layout_height="47dp"
+                android:layout_width="270dp"
+                android:layout_height="57dp"
                 android:ems="10"
-                android:hint="Longitud"
+                android:hint="LongitudyLatitud"
                 android:inputType="text"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.231"
+                app:layout_constraintHorizontal_bias="0.395"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.614" />
-
-            <EditText
-                android:id="@+id/elat3"
-                android:layout_width="137dp"
-                android:layout_height="47dp"
-                android:ems="10"
-                android:hint="Latitud"
-                android:inputType="text"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.775"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.614" />
+                app:layout_constraintVertical_bias="0.626" />
 
             <TextView
                 android:id="@+id/tdir1"
@@ -158,18 +113,18 @@
 
             <EditText
                 android:id="@+id/elong1"
-                android:layout_width="137dp"
-                android:layout_height="47dp"
+                android:layout_width="275dp"
+                android:layout_height="48dp"
                 android:ems="10"
-                android:hint="Longitud"
+                android:hint="LongitudyLatitud"
                 android:inputType="text"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.231"
+                app:layout_constraintHorizontal_bias="0.41"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.291" />
+                app:layout_constraintVertical_bias="0.299" />
 
             <Button
                 android:id="@+id/bagregar"

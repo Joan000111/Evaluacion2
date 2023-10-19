@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     //se inicializan las diferentes variables a utilizar
-    EditText longuna, latuna, longdos, latdos, longtres, lattres;
+    EditText direuna, diredos, diretres;
     Button agregar;
 
     @Override
@@ -20,12 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //las variables se asignan a su respectivo valor desde la interfaz
-        longuna = findViewById(R.id.elong1);
-        latuna = findViewById(R.id.elat1);
-        longdos = findViewById(R.id.elong2);
-        latdos = findViewById(R.id.elat2);
-        longtres = findViewById(R.id.elong3);
-        lattres = findViewById(R.id.elat3);
+        direuna = findViewById(R.id.elong1);
+        diredos = findViewById(R.id.elong2);
+        diretres = findViewById(R.id.elong3);
 
         //el boton (tres errores antes de notar su falta)
         agregar = findViewById(R.id.bagregar);
@@ -38,13 +35,29 @@ public class MainActivity extends AppCompatActivity {
                         mapa.class
                 );
 
+                //para dividir:
+                String cadena1 = (direuna.getText().toString());
+                String[] partesuno = cadena1.split(",");
+                String partelongituduna = partesuno[0];
+                String partelatituduna = partesuno[1];
+
+                String cadena2 = (diredos.getText().toString());
+                String[] partesdos = cadena2.split(",");
+                String partelongituddos = partesdos[0];
+                String partelatituddos = partesdos[1];
+
+                String cadena3 = (diretres.getText().toString());
+                String[] partestres = cadena3.split(",");
+                String partelongitudtres = partestres[0];
+                String partelatitudtres = partestres[1];
+
                 //se pasan los valores a int para no dejarlos como string
-                double primeralong = Double.parseDouble(longuna.getText().toString());
-                double primeralati = Double.parseDouble(latuna.getText().toString());
-                double segundalong = Double.parseDouble(longdos.getText().toString());
-                double segundalati = Double.parseDouble(latdos.getText().toString());
-                double terceralong = Double.parseDouble(longtres.getText().toString());
-                double terceralati = Double.parseDouble(lattres.getText().toString());
+                double primeralong = Double.parseDouble(partelongituduna.toString());
+                double primeralati = Double.parseDouble(partelatituduna.toString());
+                double segundalong = Double.parseDouble(partelongituddos.toString());
+                double segundalati = Double.parseDouble(partelatituddos.toString());
+                double terceralong = Double.parseDouble(partelongitudtres.toString());
+                double terceralati = Double.parseDouble(partelatitudtres.toString());
 
                 //se mandan al activity del mapa
                 intent.putExtra("lo1", primeralong);
