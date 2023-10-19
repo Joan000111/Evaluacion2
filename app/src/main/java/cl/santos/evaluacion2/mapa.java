@@ -2,19 +2,29 @@ package cl.santos.evaluacion2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest.permission;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import android.Manifest;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PointOfInterest;
 
 //al momento de implemetar y tal, notar que hay que tener lo demás agregado en el gradle y
 //el manifest, no dejaba ingresar el modulo sin tener antes esos trozos de código
@@ -45,7 +55,6 @@ public class mapa extends AppCompatActivity implements OnMapReadyCallback {
                 startActivity(intent);
             }
         });
-
     }
 
     @Override
@@ -53,30 +62,32 @@ public class mapa extends AppCompatActivity implements OnMapReadyCallback {
         GoogleMap mMap = googleMap;
 
         //se llaman los valores enviados con el intent
-        double lon1 = getIntent().getDoubleExtra("lo1",0.0);
-        double lat1 = getIntent().getDoubleExtra("la1",0.0);
+        double lon1 = getIntent().getDoubleExtra("lo1", 0.0);
+        double lat1 = getIntent().getDoubleExtra("la1", 0.0);
 
-        double lon2 = getIntent().getDoubleExtra("lo2",0.0);
-        double lat2 = getIntent().getDoubleExtra("la2",0.0);
+        double lon2 = getIntent().getDoubleExtra("lo2", 0.0);
+        double lat2 = getIntent().getDoubleExtra("la2", 0.0);
 
-        double lon3 = getIntent().getDoubleExtra("lo3",0.0);
-        double lat3 = getIntent().getDoubleExtra("la3",0.0);
+        double lon3 = getIntent().getDoubleExtra("lo3", 0.0);
+        double lat3 = getIntent().getDoubleExtra("la3", 0.0);
 
         //se asignan los valores a los amrcadores, tal que
-        LatLng punto1 = new LatLng(lon1,lat1);
+        LatLng punto1 = new LatLng(lon1, lat1);
         mMap.addMarker(new MarkerOptions().position(punto1)
-                .title("Primer Marcador"));
+                .title("Primer Marcador")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(punto1));
 
-        LatLng punto2 = new LatLng(lon2,lat2);
+        LatLng punto2 = new LatLng(lon2, lat2);
         mMap.addMarker(new MarkerOptions().position(punto2)
-                .title("Segundo Marcador"));
+                .title("Segundo Marcador")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(punto2));
 
-        LatLng punto3 = new LatLng(lon3,lat3);
+        LatLng punto3 = new LatLng(lon3, lat3);
         mMap.addMarker(new MarkerOptions().position(punto3)
-                .title("Tercer Marcador"));
+                .title("Tercer Marcador")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(punto3));
-
     }
 }
