@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -35,7 +36,6 @@ public class mapa extends AppCompatActivity implements OnMapReadyCallback {
     private Marker marcadore;
     double lat = 0.0;
     double lon = 0.0;
-    //GoogleMap mMap = googleMap;
     private GoogleMap mMap;
 
     @Override
@@ -91,9 +91,30 @@ public class mapa extends AppCompatActivity implements OnMapReadyCallback {
                 .title("Tercer Marcador")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
 
-        miubicacion();
+        //miubicacion();
+
+        //lo de aqui son los métodos pero de otra forma, nadena
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,15000,0, (PendingIntent) null);
+
+        lat = location.getLatitude();
+        lon = location.getLongitude();
+
+        LatLng coordenadas = new LatLng(lat, lon);
+        CameraUpdate miubicacion = CameraUpdateFactory.newLatLngZoom(coordenadas, 16);
+        mMap.addMarker(new MarkerOptions().position(coordenadas)
+                .title("Posicion Actual")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.animateCamera(miubicacion);
     }
 
+    /*
+    //https://www.youtube.com/watch?v=Uo2atDShFB0
+    // no funciona nada D,:
     private void agregarMarcador(double lat, double lon) {
         LatLng coordenadas = new LatLng(lat, lon);
         CameraUpdate miubicacion = CameraUpdateFactory.newLatLngZoom(coordenadas, 16);
@@ -124,5 +145,5 @@ public class mapa extends AppCompatActivity implements OnMapReadyCallback {
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,15000,0,locListener);
         actualizarubicacion(location);
-    }
+    }*/
 }
